@@ -32,7 +32,6 @@ def get_image(today_data):
 
   return forecast
 
-
 def get_compass(letter):
   letter = letter.replace("N", "North") \
                  .replace("NW", "Northwest") \
@@ -85,7 +84,7 @@ def x(password: str):
     return {"Error": "403"}
 
   data = json.loads(requests.get("https://api.weather.gov/gridpoints/SGX/42,51/forecast").text)["properties"]["periods"][0]
-  message = f"Good morning, you are going to be experiencing {data['shortForecast'].lower()} weather at Saint Anne School. Todays temperature will be around {data['temperature']} Fahrenheit. Expect wind from the {data['windDirection']} at around {data['windSpeed']}. View more at https://weather.sasmlange.repl.co/forecast.php. #weather #intelweather #dailyweather"
+  message = f"Good morning, you are going to be experiencing {data['shortForecast'].lower()} weather at Saint Anne School. Todays temperature will be around {data['temperature']} Fahrenheit. Expect wind from the {data['windDirection']} at around {data['windSpeed']}. View more at https://intelweather.alwaysdata.net #weather #intelweather #dailyweather"
 
   x_key = os.environ['XKEY']
   x_secret = os.environ['XSECRET']
